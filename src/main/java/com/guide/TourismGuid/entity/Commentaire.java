@@ -4,11 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Urgences")
-public class Urgence {
-	
+@Table(name="Commentaires")
+public class Commentaire {
 	public int id;
-	public String localisation;
-	public Boolean ambulanceDispo;
+	public String commentaire;
 
 }
