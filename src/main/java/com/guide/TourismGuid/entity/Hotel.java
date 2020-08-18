@@ -1,6 +1,7 @@
 package com.guide.TourismGuid.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 
@@ -8,7 +9,8 @@ import javax.persistence.Table;
 @Table(name="Hotels")
 
 public class Hotel {
-	public int id;
+	@Id
+	public long id;
 	public String nom;
 	public Double prix  ;
 	public String proximite;

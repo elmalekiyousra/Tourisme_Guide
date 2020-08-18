@@ -2,12 +2,14 @@ package com.guide.TourismGuid.entity;
 
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Restaurants")
 public class Restaurant {
-	public int id;
+	@Id
+	public long id;
 	public String nom;
 	public Double numtel;
 	public String adresse;
