@@ -9,27 +9,30 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 
 
 
 @Entity
 @Table(name="Plages")
-public class Plage {
+public class Plage implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	@Column(name="nom")
-	public String nom;
+	private String nom;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "plage_detail_id")
-	public Plage_detail plageDetail; 
+	private Plage_detail plageDetail; 
 	
 	
 	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 	@JoinColumn(name = "admin_id")
-	public Admin admin;
+	private Admin admin;
 	
 	public Plage() {
 		super();

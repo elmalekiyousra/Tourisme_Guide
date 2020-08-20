@@ -1,5 +1,7 @@
 package com.guide.TourismGuid.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,15 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Plage_datails")
-public class Plage_detail {
+public class Plage_detail implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public int id;
+	private int id;
 	@Column(name="imageUrl")
-	public String imageUrl;
+	private String imageUrl;
 	@Column(name="localisation")
-	public String localisation;
+	private String localisation;
 	
 	
 	public Plage_detail() {
